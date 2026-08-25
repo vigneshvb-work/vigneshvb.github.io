@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vignesh V B — Delivery Owner</title>
 <meta name="description" content="Vignesh V B — Delivery Owner at Elsevier, Global Pharma Operations. Operations and program delivery at the intersection of automation, GenAI, and risk governance.">
+<meta name="theme-color" content="#0a0f1f">
+<meta property="og:title" content="Vignesh V B — Operations, Automation &amp; AI">
+<meta property="og:description" content="I design the systems that make complex operations run better.">
+<meta property="og:type" content="website">
 
 <!-- ============================================================
      PERSONALIZE LATER (search for "EDIT:")
@@ -16,31 +20,37 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --bg:#0a0f1f; --bg2:#0f1730; --panel:#121b38;
+    --bg:#080c16; --bg2:#101827; --panel:#151f32;
     --line:rgba(255,255,255,0.09); --line-2:rgba(255,255,255,0.16);
-    --ink:#eef2fb; --ink-soft:#97a3c4; --ink-dim:#6b769a;
-    --gold:#f0b03a; --gold-d:#d8961f; --cyan:#56c8ea; --violet:#9b8cff;
+    --ink:#f4f7fb; --ink-soft:#a7b3c9; --ink-dim:#77839c;
+    --gold:#f3b84b; --gold-d:#d99728; --cyan:#62d5e8; --violet:#a897ff; --lime:#b9ed78;
     --maxw:1120px;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
-  body{font-family:'Inter',system-ui,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  body{font-family:'DM Sans',system-ui,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 26px;}
-  .label{font-family:'JetBrains Mono',monospace; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold);}
+  .label{font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold);}
 
-  header{position:sticky; top:0; z-index:60; background:rgba(10,15,31,.7); backdrop-filter:blur(12px); border-bottom:1px solid var(--line);}
+  header{position:sticky; top:0; z-index:60; background:rgba(8,12,22,.76); backdrop-filter:blur(18px) saturate(140%); border-bottom:1px solid var(--line);}
   nav{max-width:var(--maxw); margin:0 auto; padding:15px 26px; display:flex; align-items:center; justify-content:space-between;}
   .brand{display:flex; align-items:center; gap:11px; text-decoration:none; color:var(--ink);}
-  .mono-badge{width:34px; height:34px; display:grid; place-items:center; border:1px solid var(--line-2); border-radius:8px; font-family:'Sora',sans-serif; font-weight:700; font-size:.85rem; color:var(--gold); background:var(--bg2);}
-  .brand b{font-family:'Sora',sans-serif; font-weight:600; font-size:1rem; letter-spacing:.01em;}
-  .navlinks{display:flex; gap:26px;}
-  .navlinks a{font-family:'JetBrains Mono',monospace; font-size:.78rem; letter-spacing:.04em; text-decoration:none; color:var(--ink-soft); transition:color .2s;}
-  .navlinks a:hover{color:var(--gold);}
-  @media(max-width:820px){.navlinks{display:none;}}
+  .mono-badge{width:36px; height:36px; display:grid; place-items:center; border:1px solid rgba(243,184,75,.45); border-radius:11px; font-family:'Manrope',sans-serif; font-weight:800; font-size:.8rem; color:var(--gold); background:linear-gradient(145deg,#1d2a43,#0d1424); box-shadow:0 0 0 4px rgba(243,184,75,.05);}
+  .brand b{font-family:'Manrope',sans-serif; font-weight:700; font-size:.98rem; letter-spacing:-.02em;}
+  .navlinks{display:flex; gap:5px; padding:5px; border:1px solid var(--line); border-radius:15px; background:rgba(16,24,39,.72);}
+  .navlinks a{display:flex; align-items:center; gap:7px; font-family:'DM Sans',sans-serif; font-size:.78rem; font-weight:600; letter-spacing:.01em; text-decoration:none; color:var(--ink-soft); padding:8px 12px; border-radius:10px; transition:color .2s, background .2s, transform .2s;}
+  .navlinks a:hover,.navlinks a.active{color:var(--ink); background:rgba(243,184,75,.12);}
+  .navlinks a.active{box-shadow:inset 0 0 0 1px rgba(243,184,75,.18);}
+  .menu-toggle{display:none; border:1px solid var(--line-2); background:var(--bg2); color:var(--ink); border-radius:9px; padding:8px 11px; font:500 .76rem 'IBM Plex Mono',monospace; cursor:pointer;}
+  .mobile-nav{display:none; max-width:var(--maxw); margin:0 auto; padding:0 26px 14px; gap:8px; flex-wrap:wrap;}
+  .mobile-nav a{font:600 .74rem 'DM Sans',sans-serif; color:var(--ink-soft); text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:7px 12px;}
+  .mobile-nav a:hover{border-color:var(--gold); color:var(--gold);}
+  .mobile-nav.open{display:flex;}
+  @media(max-width:820px){.navlinks{display:none;} .menu-toggle{display:block;}}
 
   .hero{position:relative; padding:96px 0 72px; overflow:hidden;}
   #net{position:absolute; inset:0; z-index:0; opacity:.55;}
@@ -51,51 +61,86 @@
   .hero-grid{display:grid; grid-template-columns:1.5fr .9fr; gap:50px; align-items:center;}
   @media(max-width:860px){.hero-grid{grid-template-columns:1fr; gap:38px;}}
   .eyebrow{margin-bottom:20px;}
-  h1{font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(2.2rem,5.2vw,3.7rem); line-height:1.05; letter-spacing:-.025em; margin-bottom:20px;}
-  h1 .g{color:var(--gold);}
+  h1{font-family:'Manrope',sans-serif; font-weight:800; font-size:clamp(2.35rem,5.4vw,4.2rem); line-height:1.02; letter-spacing:-.055em; margin-bottom:20px; max-width:12ch;}
+  h1 .g{background:linear-gradient(110deg,var(--gold),#ffd98a 46%,var(--cyan)); -webkit-background-clip:text; background-clip:text; color:transparent;}
   .lede{font-size:clamp(1.02rem,1.7vw,1.15rem); color:var(--ink-soft); max-width:55ch; margin-bottom:28px;}
   .cta-row{display:flex; gap:13px; flex-wrap:wrap;}
-  .btn{display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:.82rem; letter-spacing:.02em; padding:13px 22px; border-radius:9px; text-decoration:none; cursor:pointer; transition:transform .15s, background .2s, border-color .2s; border:1px solid transparent;}
+  .btn{display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:.78rem; letter-spacing:.01em; padding:13px 21px; border-radius:999px; text-decoration:none; cursor:pointer; transition:transform .2s, background .2s, border-color .2s, box-shadow .2s; border:1px solid transparent;}
   .btn:hover{transform:translateY(-2px);}
-  .btn-primary{background:var(--gold); color:#1a1206; font-weight:500;}
-  .btn-primary:hover{background:var(--gold-d);}
+  .btn-primary{background:var(--gold); color:#1a1206; font-weight:600; box-shadow:0 8px 25px -12px rgba(243,184,75,.9);}
+  .btn-primary:hover{background:#ffd477; box-shadow:0 12px 30px -12px rgba(243,184,75,1);}
   .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line-2);}
   .btn-ghost:hover{border-color:var(--gold); color:var(--gold);}
+  .hero-proof{display:flex; flex-wrap:wrap; gap:9px; margin-top:24px;}
+  .proof-chip{font:500 .69rem 'IBM Plex Mono',monospace; color:var(--ink-soft); border:1px solid var(--line-2); background:rgba(15,23,48,.72); border-radius:999px; padding:7px 11px;}
+  .proof-chip strong{color:var(--gold); font-family:'Manrope',sans-serif; font-size:.9rem; margin-right:4px;}
+  .hero-workflow{display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:28px; padding-top:18px; border-top:1px solid var(--line);}
+  .workflow-step{position:relative; color:var(--ink-soft); font:500 .68rem 'IBM Plex Mono',monospace; letter-spacing:.04em; text-transform:uppercase;}
+  .workflow-step:not(:last-child)::after{content:'→'; position:absolute; right:14px; color:var(--cyan);}
+  .workflow-step b{display:block; color:var(--ink); font:600 .85rem 'Manrope',sans-serif; margin-top:5px; text-transform:none; letter-spacing:0;}
+  @media(max-width:620px){.hero-workflow{grid-template-columns:1fr 1fr; gap:18px;} .workflow-step:not(:last-child)::after{display:none;}}
 
-  .portrait{position:relative; aspect-ratio:1; border-radius:18px; border:1px solid var(--line-2); overflow:hidden; background:var(--bg2);}
+  .portrait{position:relative; aspect-ratio:1; border-radius:28px 28px 70px 28px; border:1px solid var(--line-2); overflow:hidden; background:var(--bg2); box-shadow:18px 18px 0 rgba(243,184,75,.08), 0 24px 70px -35px rgba(98,213,232,.5);}
   .portrait img{width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.02);}
-  .portrait .ring{position:absolute; inset:0; border:1px solid var(--line-2); border-radius:18px; pointer-events:none; box-shadow:inset 0 -80px 70px -40px rgba(10,15,31,.85);}
-  .portrait .tagchip{position:absolute; left:14px; bottom:14px; font-family:'JetBrains Mono',monospace; font-size:.68rem; letter-spacing:.08em; color:var(--ink); background:rgba(10,15,31,.6); border:1px solid var(--line-2); border-radius:8px; padding:6px 11px; backdrop-filter:blur(4px);}
+  .portrait .ring{position:absolute; inset:0; border:1px solid var(--line-2); border-radius:28px 28px 70px 28px; pointer-events:none; box-shadow:inset 0 -80px 70px -40px rgba(8,12,22,.85);}
+  .portrait .tagchip{position:absolute; left:14px; bottom:14px; font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.08em; color:var(--ink); background:rgba(10,15,31,.6); border:1px solid var(--line-2); border-radius:8px; padding:6px 11px; backdrop-filter:blur(4px);}
 
   .band{border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-top:60px;}
   .band .inner{display:grid; grid-template-columns:repeat(5,1fr);}
   .kpi{padding:30px 18px; border-right:1px solid var(--line);}
   .kpi:last-child{border-right:none;}
-  .kpi .n{font-family:'Sora',sans-serif; font-size:2.2rem; font-weight:700; letter-spacing:-.02em; color:var(--ink);}
+  .kpi .n{font-family:'Manrope',sans-serif; font-size:2.2rem; font-weight:700; letter-spacing:-.02em; color:var(--ink);}
   .kpi .n .u{color:var(--gold);}
   .kpi .c{margin-top:3px; color:var(--ink-soft); font-size:.82rem;}
   @media(max-width:760px){.band .inner{grid-template-columns:1fr 1fr;} .kpi:nth-child(2n){border-right:none;}}
 
-  section{padding:88px 0;}
+  .work-preview{padding-top:72px; padding-bottom:72px;}
+  .work-preview .sec-head{margin-bottom:28px;}
+  .preview-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .preview-card{display:flex; flex-direction:column; overflow:hidden; border:1px solid var(--line); border-radius:15px; background:var(--panel); transition:transform .2s, border-color .2s, box-shadow .2s;}
+  .preview-card:hover{transform:translateY(-5px); border-color:var(--gold); box-shadow:0 16px 36px -24px rgba(240,176,58,.65);}
+  .preview-card img{display:block; width:100%; height:170px; object-fit:cover; background:var(--bg);}
+  .preview-card:nth-child(2) img{object-fit:contain; padding:9px;}
+  .preview-card .pc-body{padding:18px; flex:1;}
+  .preview-card .pc-tag{font:500 .67rem 'IBM Plex Mono',monospace; color:var(--violet); text-transform:uppercase; letter-spacing:.1em;}
+  .preview-card h3{font:600 1.05rem 'Manrope',sans-serif; margin:8px 0 7px;}
+  .preview-card p{color:var(--ink-soft); font-size:.87rem; line-height:1.55;}
+  .preview-card .pc-link{display:inline-flex; margin-top:16px; color:var(--gold); font:500 .72rem 'IBM Plex Mono',monospace; text-decoration:none;}
+  @media(max-width:820px){.preview-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.preview-grid{grid-template-columns:1fr;}}
+  .recent-work{margin-top:42px; padding-top:28px; border-top:1px solid var(--line);}
+  .recent-work h3{font:700 1.18rem 'Manrope',sans-serif; letter-spacing:-.025em; margin-bottom:14px;}
+  .recent-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px;}
+  .recent-card{border:1px solid var(--line); border-radius:14px; background:rgba(8,12,22,.38); padding:17px;}
+  .recent-card .rc-num{display:inline-grid; place-items:center; width:25px; height:25px; border-radius:8px; background:rgba(243,184,75,.12); color:var(--gold); font:600 .68rem 'IBM Plex Mono',monospace; margin-bottom:12px;}
+  .recent-card b{display:block; font:700 .92rem 'Manrope',sans-serif; margin-bottom:6px;}
+  .recent-card p{color:var(--ink-soft); font-size:.82rem; line-height:1.55;}
+  .recent-card .rc-tools{display:block; margin-top:12px; color:var(--cyan); font:500 .66rem 'IBM Plex Mono',monospace;}
+  .opportunity-strip{display:flex; flex-wrap:wrap; gap:8px; margin-top:15px;}
+  .opportunity-strip span{border:1px solid rgba(185,237,120,.22); color:#d2f3a9; background:rgba(185,237,120,.06); border-radius:999px; padding:6px 10px; font-size:.73rem;}
+  @media(max-width:760px){.recent-grid{grid-template-columns:1fr;}}
+
+  section{padding:104px 0;}
   .alt{background:var(--bg2);}
   .sec-head{margin-bottom:44px; max-width:62ch;}
-  .sec-head h2{font-family:'Sora',sans-serif; font-weight:700; font-size:clamp(1.7rem,3.6vw,2.5rem); letter-spacing:-.02em; margin-top:12px;}
+  .sec-head h2{font-family:'Manrope',sans-serif; font-weight:800; font-size:clamp(1.8rem,3.8vw,2.65rem); letter-spacing:-.045em; margin-top:12px; line-height:1.08;}
   .sec-head p{color:var(--ink-soft); margin-top:12px;}
+  .section-kicker{color:var(--ink-dim); font-size:.84rem; margin-top:10px;}
 
   .about{display:grid; grid-template-columns:1.45fr 1fr; gap:54px; align-items:start;}
   @media(max-width:860px){.about{grid-template-columns:1fr; gap:34px;}}
   .about p{color:var(--ink-soft); margin-bottom:16px; font-size:1.04rem;}
   .about p strong{color:var(--ink); font-weight:600;}
-  .biglabel{font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(2rem,4.6vw,3.1rem); letter-spacing:.1em; line-height:1; margin-bottom:8px; background:linear-gradient(120deg,var(--gold),var(--cyan)); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .biglabel{font-family:'Manrope',sans-serif; font-weight:800; font-size:clamp(1.8rem,4.3vw,2.9rem); letter-spacing:.055em; line-height:1; margin-bottom:8px; background:linear-gradient(120deg,var(--gold),var(--cyan)); -webkit-background-clip:text; background-clip:text; color:transparent;}
   .creed{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:30px;}
   @media(max-width:680px){.creed{grid-template-columns:1fr;}}
   .cv{position:relative; overflow:hidden; background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:13px; padding:22px 18px 22px; opacity:0; transform:translateX(-70px); transition:opacity .6s ease, transform .65s cubic-bezier(.2,.75,.3,1), border-color .2s;}
   .cv.in{opacity:1; transform:none;}
   .cv:hover{border-color:var(--gold);}
-  .cv .k{font-family:'Sora',sans-serif; font-weight:800; font-size:1.5rem; letter-spacing:.06em; line-height:1; background:linear-gradient(120deg,var(--gold),var(--cyan)); -webkit-background-clip:text; background-clip:text; color:transparent;}
-  .cv b{display:block; font-family:'Sora',sans-serif; color:var(--ink); font-weight:600; font-size:1.0rem; margin:11px 0 6px;}
+  .cv .k{font-family:'Manrope',sans-serif; font-weight:800; font-size:1.5rem; letter-spacing:.06em; line-height:1; background:linear-gradient(120deg,var(--gold),var(--cyan)); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .cv b{display:block; font-family:'Manrope',sans-serif; color:var(--ink); font-weight:600; font-size:1.0rem; margin:11px 0 6px;}
   .cv p{color:var(--ink-soft); font-size:.87rem; margin:0; line-height:1.55;}
-  .factcard{border:1px solid var(--line); border-radius:14px; background:var(--panel); padding:26px;}
+  .factcard{border:1px solid var(--line); border-radius:18px; background:linear-gradient(145deg,rgba(21,31,50,.95),rgba(13,21,36,.95)); padding:26px; box-shadow:0 20px 50px -42px rgba(98,213,232,.75);}
   .factcard .row{display:flex; justify-content:space-between; gap:14px; padding:11px 0; border-bottom:1px solid var(--line); font-size:.9rem;}
   .factcard .row:last-child{border-bottom:none;}
   .factcard .row span:first-child{color:var(--ink-dim);}
@@ -106,11 +151,11 @@
   .exp-head .sec-head{margin-bottom:0;}
   .factcard--exp{align-self:stretch; display:flex; flex-direction:column; justify-content:space-between;}
   .projects{margin-top:20px; border-top:1px dashed var(--line-2); padding-top:16px;}
-  .projects .pjt{font-family:'JetBrains Mono',monospace; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--violet); display:block; margin-bottom:10px;}
+  .projects .pjt{font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--violet); display:block; margin-bottom:10px;}
   .projects li::before{content:"\25C6"; color:var(--violet); font-size:.68rem; top:3px;}
 
   .rs-deep{margin-top:16px; border-top:1px dashed var(--line-2); padding-top:14px;}
-  .rs-deep summary{cursor:pointer; list-style:none; font-family:'Sora',sans-serif; font-weight:600; font-size:.92rem; letter-spacing:.005em; color:#0a0f1f; background:linear-gradient(135deg,var(--gold),#ffd277); border:1px solid var(--gold); border-radius:999px; padding:11px 20px; display:inline-flex; align-items:center; gap:11px; box-shadow:0 4px 16px -6px rgba(240,176,58,.5); animation:tglpulse 2.8s ease-in-out infinite; transition:transform .15s ease, filter .2s ease, box-shadow .25s ease;}
+  .rs-deep summary{cursor:pointer; list-style:none; font-family:'Manrope',sans-serif; font-weight:600; font-size:.92rem; letter-spacing:.005em; color:#0a0f1f; background:linear-gradient(135deg,var(--gold),#ffd277); border:1px solid var(--gold); border-radius:999px; padding:11px 20px; display:inline-flex; align-items:center; gap:11px; box-shadow:0 4px 16px -6px rgba(240,176,58,.5); animation:tglpulse 2.8s ease-in-out infinite; transition:transform .15s ease, filter .2s ease, box-shadow .25s ease;}
   .rs-deep summary:hover{transform:translateY(-2px); filter:brightness(1.06); box-shadow:0 8px 26px -6px rgba(240,176,58,.7);}
   .rs-deep summary::-webkit-details-marker{display:none;}
   .rs-deep summary::before{content:"+"; display:inline-grid; place-items:center; width:21px; height:21px; border:1.5px solid #0a0f1f; border-radius:6px; color:#0a0f1f; font-size:1rem; font-weight:800; line-height:1;}
@@ -118,15 +163,15 @@
   .rs-deep[open] summary::before{content:"\2013";}
   @keyframes tglpulse{0%,100%{box-shadow:0 4px 16px -6px rgba(240,176,58,.45);}50%{box-shadow:0 4px 26px -2px rgba(240,176,58,.85);}}
   .deep-body{margin-top:18px;}
-  .deep-h{font-family:'Sora',sans-serif; font-weight:600; font-size:1.06rem; color:var(--ink); margin:22px 0 3px;}
+  .deep-h{font-family:'Manrope',sans-serif; font-weight:600; font-size:1.06rem; color:var(--ink); margin:22px 0 3px;}
   .deep-body > .deep-h:first-child{margin-top:0;}
   .deep-sub{color:var(--ink-dim); font-size:.82rem; margin:0 0 12px;}
   .deep-body p.lead{color:var(--ink-soft); font-size:.93rem; margin:0 0 14px;}
   .pillar2{margin:0 0 16px;}
-  .pillar2 .ph{font-family:'JetBrains Mono',monospace; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--violet); border-bottom:1px solid var(--line); padding-bottom:6px; margin-bottom:9px;}
+  .pillar2 .ph{font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--violet); border-bottom:1px solid var(--line); padding-bottom:6px; margin-bottom:9px;}
   .deep-card{background:var(--bg2); border:1px solid var(--line); border-radius:12px; padding:17px 19px; margin-bottom:12px;}
-  .deep-card .rt2{font-family:'JetBrains Mono',monospace; font-size:.65rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:5px;}
-  .deep-card h5{font-family:'Sora',sans-serif; font-weight:600; font-size:1rem; margin:0 0 10px;}
+  .deep-card .rt2{font-family:'IBM Plex Mono',monospace; font-size:.65rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:5px;}
+  .deep-card h5{font-family:'Manrope',sans-serif; font-weight:600; font-size:1rem; margin:0 0 10px;}
 
   .tl{position:relative; padding-left:42px;}
   .tl::before{content:""; position:absolute; left:14px; top:6px; bottom:6px; width:2px; background:var(--line);}
@@ -135,14 +180,14 @@
   .job:last-child{padding-bottom:0;}
   .job .dot{position:absolute; left:-35px; top:5px; width:14px; height:14px; border-radius:50%; background:var(--bg); border:2px solid var(--gold); box-shadow:0 0 0 4px rgba(240,176,58,.12);}
   .job .co{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;}
-  .job h3{font-family:'Sora',sans-serif; font-weight:700; font-size:1.3rem;}
-  .job .span{font-family:'JetBrains Mono',monospace; font-size:.72rem; letter-spacing:.05em; color:var(--cyan);}
-  .roles{font-family:'JetBrains Mono',monospace; font-size:.8rem; color:var(--ink-dim); margin:6px 0 13px;}
+  .job h3{font-family:'Manrope',sans-serif; font-weight:700; font-size:1.3rem;}
+  .job .span{font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.05em; color:var(--cyan);}
+  .roles{font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--ink-dim); margin:6px 0 13px;}
   .roles b{color:var(--gold); font-weight:500;}
   .subrole{margin-top:18px;}
   .subrole:first-of-type{margin-top:8px;}
-  .subrole .rt{font-family:'Sora',sans-serif; font-weight:600; font-size:1.04rem; color:var(--ink);}
-  .subrole .rs{font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--cyan); letter-spacing:.05em; display:block; margin:3px 0 9px;}
+  .subrole .rt{font-family:'Manrope',sans-serif; font-weight:600; font-size:1.04rem; color:var(--ink);}
+  .subrole .rs{font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--cyan); letter-spacing:.05em; display:block; margin:3px 0 9px;}
   .job ul{list-style:none; display:flex; flex-direction:column; gap:8px;}
   .job li{position:relative; padding-left:18px; color:var(--ink-soft); font-size:.95rem;}
   .job li::before{content:"\25B8"; position:absolute; left:0; color:var(--gold-d); font-size:.8rem; top:2px;}
@@ -150,12 +195,12 @@
   .grid-cap{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
   @media(max-width:860px){.grid-cap{grid-template-columns:1fr 1fr;}}
   @media(max-width:520px){.grid-cap{grid-template-columns:1fr;}}
-  .cap{border:1px solid var(--line); border-radius:14px; background:var(--panel); padding:20px; width:100%; text-align:left; font:inherit; color:inherit; cursor:pointer; transition:transform .18s, border-color .2s;}
-  .cap:hover{transform:translateY(-3px); border-color:var(--gold);}
+  .cap{border:1px solid var(--line); border-radius:17px; background:linear-gradient(145deg,var(--panel),#101827); padding:21px; width:100%; text-align:left; font:inherit; color:inherit; cursor:pointer; transition:transform .2s, border-color .2s, box-shadow .2s;}
+  .cap:hover{transform:translateY(-4px); border-color:var(--gold); box-shadow:0 16px 30px -24px rgba(243,184,75,.9);}
   .cap-top{display:flex; align-items:center; gap:12px;}
   .cap-ico{flex:none; width:42px; height:42px; display:grid; place-items:center; border-radius:11px; background:rgba(240,176,58,.10); border:1px solid var(--line);}
   .cap-ico svg{width:22px; height:22px; fill:none; stroke:var(--gold); stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round;}
-  .cap h4{font-family:'Sora',sans-serif; font-weight:600; font-size:1rem; margin:0; flex:1; line-height:1.25;}
+  .cap h4{font-family:'Manrope',sans-serif; font-weight:600; font-size:1rem; margin:0; flex:1; line-height:1.25;}
   .cap-chev{flex:none; width:18px; height:18px; position:relative;}
   .cap-chev::before,.cap-chev::after{content:""; position:absolute; background:var(--gold); border-radius:2px; transition:transform .3s ease, opacity .3s ease;}
   .cap-chev::before{top:8px; left:3px; width:12px; height:2px;}
@@ -164,23 +209,31 @@
   .cap-body{max-height:0; overflow:hidden; transition:max-height .35s ease, margin-top .35s ease;}
   .cap.open .cap-body{max-height:180px; margin-top:13px;}
   .cap-body p{color:var(--ink-soft); font-size:.9rem; margin:0; line-height:1.55;}
+  .pillar-strip{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:-12px 0 28px;}
+  .pillar{border:1px solid var(--line); border-top:2px solid var(--gold); border-radius:12px; background:linear-gradient(145deg,var(--panel),var(--bg2)); padding:15px;}
+  .pillar:nth-child(2){border-top-color:var(--cyan);} .pillar:nth-child(3){border-top-color:var(--violet);} .pillar:nth-child(4){border-top-color:#7ee0a2;}
+  .pillar b{display:block; font:600 .88rem 'Manrope',sans-serif; margin-bottom:4px;}
+  .pillar span{color:var(--ink-soft); font-size:.76rem; line-height:1.45;}
+  @media(max-width:760px){.pillar-strip{grid-template-columns:1fr 1fr;}}
+  @media(max-width:480px){.pillar-strip{grid-template-columns:1fr;}}
 
   .tags{display:flex; flex-wrap:wrap; gap:10px;}
-  .tag{font-family:'JetBrains Mono',monospace; font-size:.78rem; color:var(--ink-soft); border:1px solid var(--line); border-radius:999px; padding:8px 15px; background:var(--bg2); transition:color .2s, border-color .2s;}
+  .tag{font-family:'IBM Plex Mono',monospace; font-size:.78rem; color:var(--ink-soft); border:1px solid var(--line); border-radius:999px; padding:8px 15px; background:var(--bg2); transition:color .2s, border-color .2s;}
   .tag:hover{color:var(--cyan); border-color:var(--cyan);}
   .langbar{display:flex; flex-wrap:wrap; gap:22px; margin-top:14px;}
   .lang{font-size:.92rem; color:var(--ink-soft);}
-  .lang b{font-family:'Sora',sans-serif; color:var(--ink); font-weight:600; margin-right:7px;}
+  .lang b{font-family:'Manrope',sans-serif; color:var(--ink); font-weight:600; margin-right:7px;}
 
   .edu{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
   @media(max-width:760px){.edu{grid-template-columns:1fr;}}
-  .deg{border:1px solid var(--line); border-radius:13px; background:var(--panel); padding:20px;}
-  .deg .yr{font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--cyan); letter-spacing:.05em;}
-  .deg h4{font-family:'Sora',sans-serif; font-weight:600; font-size:1.04rem; margin:6px 0 3px;}
+  .deg{border:1px solid var(--line); border-radius:17px; background:linear-gradient(145deg,var(--panel),#101827); padding:21px; transition:transform .2s, border-color .2s;}
+  .deg:hover{transform:translateY(-3px); border-color:var(--cyan);}
+  .deg .yr{font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--cyan); letter-spacing:.05em;}
+  .deg h4{font-family:'Manrope',sans-serif; font-weight:600; font-size:1.04rem; margin:6px 0 3px;}
   .deg .uni{color:var(--ink-dim); font-size:.82rem; margin-top:6px;}
 
   .cert-grp{margin-bottom:24px;}
-  .cert-grp .gh{font-family:'JetBrains Mono',monospace; font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; color:var(--violet); margin-bottom:12px;}
+  .cert-grp .gh{font-family:'IBM Plex Mono',monospace; font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; color:var(--violet); margin-bottom:12px;}
   .cert-list{display:flex; flex-wrap:wrap; gap:9px;}
   .cert{font-size:.85rem; color:var(--ink-soft); border:1px solid var(--line); border-radius:8px; padding:7px 13px; background:var(--bg2);}
 
@@ -190,12 +243,12 @@
   .placeholder{min-height:340px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; background:var(--panel); color:var(--ink-soft); text-align:center; padding:34px;}
 
   .contact-card{border:1px solid var(--line); border-radius:18px; background:radial-gradient(120% 140% at 80% 0%, #16224a 0%, var(--panel) 55%); padding:46px; text-align:center;}
-  .contact-card h2{font-family:'Sora',sans-serif; font-weight:700; font-size:clamp(1.7rem,3.6vw,2.4rem); letter-spacing:-.02em;}
+  .contact-card h2{font-family:'Manrope',sans-serif; font-weight:700; font-size:clamp(1.7rem,3.6vw,2.4rem); letter-spacing:-.02em;}
   .contact-card p{color:var(--ink-soft); margin:12px auto 26px; max-width:48ch;}
   .contact-row{display:flex; gap:13px; flex-wrap:wrap; justify-content:center;}
 
   footer{border-top:1px solid var(--line); padding:34px 0;}
-  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-family:'JetBrains Mono',monospace; font-size:.76rem; color:var(--ink-dim);}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:.76rem; color:var(--ink-dim);}
 
   .reveal{opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s ease;}
   .reveal.in{opacity:1; transform:none;}
@@ -207,14 +260,14 @@
   .toolgrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(155px,1fr)); gap:12px;}
   .toolchip{display:flex; align-items:center; gap:11px; border:1px solid var(--line); border-radius:12px; background:var(--bg2); padding:10px 12px; transition:border-color .2s, transform .18s;}
   .toolchip:hover{border-color:var(--cyan); transform:translateY(-2px);}
-  .toolchip .tlogo{flex:none; width:34px; height:34px; border-radius:9px; display:grid; place-items:center; font-family:'Sora',sans-serif; font-weight:700; font-size:.8rem; color:#0a0f1f; background:linear-gradient(135deg,var(--gold),var(--cyan));}
+  .toolchip .tlogo{flex:none; width:34px; height:34px; border-radius:9px; display:grid; place-items:center; font-family:'Manrope',sans-serif; font-weight:700; font-size:.8rem; color:#0a0f1f; background:linear-gradient(135deg,var(--gold),var(--cyan));}
   .toolchip .tn{font-size:.86rem; color:var(--ink);}
 
   .langgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:16px;}
   @media(max-width:620px){.langgrid{grid-template-columns:1fr;}}
   .langcard{border:1px solid var(--line); border-radius:13px; background:var(--panel); padding:18px 20px;}
-  .langcard .ln{font-family:'Sora',sans-serif; font-weight:600; font-size:1.06rem; color:var(--ink);}
-  .langcard .ll{font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--ink-soft); letter-spacing:.04em; display:block; margin:3px 0 13px;}
+  .langcard .ln{font-family:'Manrope',sans-serif; font-weight:600; font-size:1.06rem; color:var(--ink);}
+  .langcard .ll{font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ink-soft); letter-spacing:.04em; display:block; margin:3px 0 13px;}
   .langmeter{height:7px; border-radius:99px; background:var(--bg); overflow:hidden;}
   .langmeter span{display:block; height:100%; border-radius:99px; background:linear-gradient(90deg,var(--gold),var(--cyan));}
 
@@ -235,7 +288,7 @@
   .shot img{display:block; width:100%; height:auto;}
   .shot figcaption{padding:14px 16px; color:var(--ink-soft); font-size:.86rem; border-top:1px solid var(--line);}
 
-  a:focus-visible,.btn:focus-visible{outline:2px solid var(--cyan); outline-offset:3px;}
+  a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--cyan); outline-offset:3px;}
 </style>
 </head>
 <body>
@@ -243,31 +296,47 @@
 <header>
   <nav>
     <a class="brand" href="#top"><span class="mono-badge">VB</span><b>Vignesh V B</b></a>
-    <div class="navlinks">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#creation">Creations</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
+    <div class="navlinks" aria-label="Primary navigation">
+      <a href="#about" data-section="about">Profile</a>
+      <a href="#selected-work" data-section="selected-work">Work</a>
+      <a href="#experience" data-section="experience">Journey</a>
+      <a href="#skills" data-section="skills">Toolkit</a>
+      <a href="#education" data-section="education">Learning</a>
+      <a href="#contact" data-section="contact">Connect</a>
     </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
   </nav>
+  <div class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="#about">Profile</a><a href="#selected-work">Work</a><a href="#experience">Journey</a>
+    <a href="#skills">Toolkit</a><a href="#education">Learning</a><a href="#contact">Connect</a>
+  </div>
 </header>
 
 <main id="top">
 
   <section class="hero">
-    <canvas id="net"></canvas>
+    <canvas id="net" aria-hidden="true"></canvas>
     <div class="aurora a1"></div><div class="aurora a2"></div>
     <div class="wrap">
       <div class="hero-grid">
         <div>
           <div class="eyebrow label reveal">Delivery Owner · Global Pharma Operations · Elsevier</div>
-          <h1 class="reveal">Turning complex operations into on-time delivery — with Visual dashboards for data analysis and audits, automation, and operational <span class="g">know-how.</span></h1>
-          <p class="lede reveal">I'm Vignesh, a Delivery Owner who pairs operational execution with analytical depth. Over nine years across Groupon, Amazon, and Elsevier, I've owned delivery end-to-end while building the automation, AI workflows, and risk governance underneath it.</p>
+          <h1 class="reveal">I design the systems that make complex operations <span class="g">run better.</span></h1>
+          <p class="lede reveal">I'm Vignesh, a Delivery Owner combining operational execution, analytics, automation, and responsible AI to make global workflows more visible, reliable, and scalable.</p>
           <div class="cta-row reveal">
-            <a class="btn btn-primary" href="#experience">Experience over the years</a>
+            <a class="btn btn-primary" href="#selected-work">Explore my impact</a>
             <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+          <div class="hero-proof reveal" aria-label="Selected impact metrics">
+            <span class="proof-chip"><strong>100%</strong> on-time delivery</span>
+            <span class="proof-chip"><strong>98%</strong> CSAT</span>
+            <span class="proof-chip"><strong>9+</strong> years across global operations</span>
+          </div>
+          <div class="hero-workflow reveal" aria-label="Working approach">
+            <div class="workflow-step">01<b>Diagnose</b></div>
+            <div class="workflow-step">02<b>Design</b></div>
+            <div class="workflow-step">03<b>Automate</b></div>
+            <div class="workflow-step">04<b>Govern &amp; improve</b></div>
           </div>
         </div>
         <div class="portrait reveal">
@@ -289,6 +358,39 @@
     </div>
   </section>
 
+  <section id="selected-work" class="work-preview alt">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="biglabel">SELECTED WORK</div>
+        <h2>From operational friction to measurable control.</h2>
+        <p>Examples of how I turn manual work, scattered information, and process risk into systems people can use and trust.</p>
+      </div>
+      <div class="preview-grid">
+        <article class="preview-card reveal">
+          <img src="creation-delivery.jpg" alt="On-time delivery performance dashboard built in Power BI" loading="lazy">
+          <div class="pc-body"><span class="pc-tag">Data &amp; delivery</span><h3>Delivery visibility system</h3><p>Built Power BI reporting that turns project data into a clearer operational and leadership view.</p><a class="pc-link" href="#creation">View dashboard work →</a></div>
+        </article>
+        <article class="preview-card reveal">
+          <img src="creation-rshub1.jpg" alt="Researcher Support Hub SharePoint home page" loading="lazy">
+          <div class="pc-body"><span class="pc-tag">Knowledge platform</span><h3>Researcher Support Hub</h3><p>Created a single source of truth for tools, guidance, documents, updates, and team enablement.</p><a class="pc-link" href="#creation">Explore the hub →</a></div>
+        </article>
+        <article class="preview-card reveal">
+          <img src="creation-poster2.jpg" alt="Bite-size process visibility poster" loading="lazy">
+          <div class="pc-body"><span class="pc-tag">Enablement &amp; change</span><h3>Bite-size knowledge design</h3><p>Translated complex process updates into visual, easy-to-use communication for global teams.</p><a class="pc-link" href="#creation">See the visual work →</a></div>
+        </article>
+      </div>
+      <div class="recent-work reveal">
+        <h3>Recent delivery systems &amp; ownership</h3>
+        <div class="recent-grid">
+          <article class="recent-card"><span class="rc-num">01</span><b>Automation Phase 2</b><p>Built the HTML workflow end to end, including Power Automate reminders, JSON-generation protocol, SOP, OneDrive materials, and MS Forms feedback loop.</p><span class="rc-tools">HTML · Power Automate · JSON · SOP</span></article>
+          <article class="recent-card"><span class="rc-num">02</span><b>Scheduler &amp; status tools</b><p>Integrated FTX delivery mode into the Abstract Scheduler with an Elsevier-aligned interface, while completing the Article Status Manager and Check-IN HTML review.</p><span class="rc-tools">Abstract Scheduler · Article Status Manager · UX</span></article>
+          <article class="recent-card"><span class="rc-num">03</span><b>Transition &amp; reporting handover</b><p>Completed structured KT and ownership transfer across ANIMAL, NMB TERACHEM, Future Skills, Spanish Supplements, and the Power BI Reporting Pillar.</p><span class="rc-tools">KT · SharePoint · Power BI · Governance</span></article>
+        </div>
+        <div class="opportunity-strip" aria-label="Future opportunity areas"><span>RFCP &amp; SIF HTML system</span><span>Automatic supplement assigner</span><span>Spanish workflow bot</span></div>
+      </div>
+    </div>
+  </section>
+
   <section id="about" class="alt">
     <div class="wrap">
       <div class="sec-head reveal"><div class="biglabel">ABOUT</div><h2>Curiosity, turned into a method</h2></div>
@@ -306,7 +408,7 @@
       </div>
       <div class="embed reveal" style="margin-top:36px">
         <div class="video-wrap">
-          <iframe src="https://www.youtube.com/embed/mV4rytahWzY"
+          <iframe loading="lazy" src="https://www.youtube.com/embed/mV4rytahWzY"
             title="A short introduction — Vignesh V B"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -318,7 +420,7 @@
   <section id="experience">
     <div class="wrap">
       <div class="exp-head">
-        <div class="sec-head reveal"><div class="biglabel">EXPERIENCE</div><h2>A decade of growing ownership, developing knowledge, continuous learning, innovation and people trust.</h2>
+        <div class="sec-head reveal"><div class="biglabel">EXPERIENCE</div><h2>A decade of growing ownership, continuous learning, innovation, and people trust.</h2>
           <p>From frontline support, to fraud &amp; quality investigation, to owning projects and the systems beneath it.</p></div>
         <aside class="factcard factcard--exp reveal">
           <div class="row"><span>Current Role</span><span>Delivery Owner</span></div>
@@ -327,6 +429,8 @@
           <div class="row"><span>Focus</span><span>Project Management · Automation · Risk Governance · Fraud Detection · Innovation</span></div>
           <div class="row"><span>Frameworks</span><span>Lean Six Sigma Green Belt · RASCI · Power BI &amp; Tableau Dashboard · Project strategy</span></div>
           <div class="row"><span>AI</span><span>Generative AI SME · RELX AI Fluency · AI based projects</span></div>
+          <div class="row"><span>Next chapter</span><span>Selected for a 6-month Data Discovery &amp; Enrichment Expert I secondment in KITE · starts Sep 2026</span></div>
+          <div class="row"><span>Recognition</span><span>Very Strong mid-year performance rating</span></div>
           <div class="row"><span>Open to</span><span>New opportunities, continuous learning &amp; innovation</span></div>
         </aside>
       </div>
@@ -335,7 +439,7 @@
 
         <div class="job">
           <span class="dot"></span>
-          <div class="co"><h3>Elsevier</h3><span class="span">JAN 2022 — PRESENT · 4 YRS 6 MOS</span></div>
+          <div class="co"><h3>Elsevier</h3><span class="span">JAN 2022 — PRESENT · GLOBAL PHARMA OPERATIONS</span></div>
 
           <div class="subrole">
             <span class="rt">Delivery Owner</span>
@@ -343,10 +447,12 @@
             <ul>
               <li>Own end-to-end delivery of global publishing projects — 100% on-time completion across international &amp; Spanish journal supplements, digital editions, and regional transitions through structured planning and prioritization.</li>
               <li>Built automation that didn't exist before: a custom Abstract Scheduler, Power Automate flows syncing SharePoint and Excel, and Power BI dashboards with separate Delivery Owner and GPO leadership views.</li>
+              <li>Built and rolled out HTML- and Power Automate-based workflow tools, including Automation Phase 2, automated reminders, JSON-generation protocols, and the Article Status Manager.</li>
               <li>Act as Generative AI SME — reviewing AI learning pathways, advising on fair-use/AI principles, and supporting responsible adoption and workflow validation.</li>
               <li>Drove data accuracy and financial governance by validating project setup, pricing, and Oracle R12 configurations, reducing billing discrepancies.</li>
               <li>Authored end-to-end SOPs (Spanish supplements, ABP) and a RASCI accountability framework now used across the team; led the in-house transition of Spanish journals and digital editions with zero disruption.</li>
               <li>Improved engagement as a change facilitator: OV 7.7 → 8.2, eNPS 24 → 50.</li>
+              <li>Completed structured transitions across supplement, SME, and reporting workstreams, handing over knowledge, documentation, trackers, SharePoint repositories, and Power BI ownership.</li>
             </ul>
 
             <details class="rs-deep">
@@ -357,9 +463,12 @@
                 <div class="deep-h">Day-to-day &amp; impact</div>
                 <ul>
                   <li>Managed International Abstract &amp; Article Supplements, Spanish Abstract Supplements, and Digi Editions under strict deadlines, with stakeholder alignment and data accuracy.</li>
+                  <li>Integrated FTX delivery mode into the Abstract Scheduler with an Elsevier-aligned interface, rolled it out to the team, and used MS Forms to collect structured feedback.</li>
+                  <li>Completed the Check-IN HTML file review and progressed the Article Supplement Status Update HTML tool toward completion.</li>
                   <li>Configured and validated Item Master, pricing, and project setups in Oracle R12 through controlled verification — eliminating duplication errors and protecting billing integrity.</li>
                   <li>Mentored and trained Pre-Delivery, Delivery, and Post-Delivery Owners through the new operating-model rollout (Supplements, Item Master creation, project setup), plus cross-functional Global Pharma Operations teams via live production audits.</li>
                   <li>Acted as change facilitator during global restructuring, driving agility and team empowerment, and presented data-backed innovation initiatives to the Operations Management Team.</li>
+                  <li>Clarified the ABP IKB scope with stakeholders, distinguishing Article Supplements from Abstract Supplements and supporting accurate global knowledge documentation.</li>
                 </ul>
 
                 <div class="deep-h">Projects &amp; initiatives</div>
@@ -368,6 +477,7 @@
                   <h5>Generative AI SME &amp; automation</h5>
                   <ul>
                     <li>Active SME for Generative AI in Journal Operations; supported GenAI Bronze &amp; Silver certification content and reviewed AI learning materials in the Future Skills program.</li>
+                    <li>Reviewed four GenAI Silver Pathway prompts and returned process-focused feedback within the required timeline.</li>
                     <li>Upholds AI principles and fair-usage policies across internal and third-party AI systems.</li>
                     <li>Contributed automation and Appian-based tool creation under the Automation Pillar; built a <strong>RASCI</strong> framework across core processes to clarify ownership and accountability.</li>
                   </ul>
@@ -389,13 +499,21 @@
                   </ul>
                 </div>
 
-                <div class="deep-card">
-                  <span class="rt2">Foundation of Excellence — GPO</span>
+                  <div class="deep-card">
+                    <span class="rt2">Foundation of Excellence — GPO</span>
                   <h5>Automation &amp; Reporting Pillar</h5>
                   <ul>
                     <li>Established a Confluence-based governance hub with defined ownership, structured pillars, and a reporting cadence.</li>
                     <li>Introduced the Schedule Generator concept and led Appian automation discussions with technology stakeholders.</li>
                     <li>Building structured Power BI reporting and migrated trackers for centralized governance; designed an Appian-based unified system for Supplement tracking and stakeholder visibility.</li>
+                  </ul>
+                  </div>
+                <div class="deep-card">
+                  <span class="rt2">Reporting Pillar transition</span>
+                  <h5>Power BI dashboard handover</h5>
+                  <ul>
+                    <li>Provided the Reporting Team with dashboard access, end-to-end technical documentation, a live demonstration, and answers to maintenance questions.</li>
+                    <li>Formally transferred ongoing Power BI ownership and support responsibility with the required workflow and setup information.</li>
                   </ul>
                 </div>
               </div>
@@ -725,6 +843,12 @@
   <section id="skills">
     <div class="wrap">
       <div class="sec-head reveal"><div class="biglabel">CAPABILITIES</div><h2>Analytical depth + implementation &amp; execution + people trust.</h2></div>
+      <div class="pillar-strip reveal" aria-label="Strategic capability pillars">
+        <div class="pillar"><b>Operational excellence</b><span>Delivery, Lean Six Sigma, SOPs, and RASCI.</span></div>
+        <div class="pillar"><b>Intelligence &amp; automation</b><span>Power BI, Power Automate, Appian, and GenAI.</span></div>
+        <div class="pillar"><b>Risk &amp; quality</b><span>Audits, compliance, validation, and fraud detection.</span></div>
+        <div class="pillar"><b>People enablement</b><span>CX, mentoring, training, and stakeholder trust.</span></div>
+      </div>
       <div class="grid-cap">
         <button class="cap reveal" type="button"><div class="cap-top"><span class="cap-ico"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></span><h4>Delivery &amp; Operations Management</h4><span class="cap-chev"></span></div><div class="cap-body"><p>End-to-end program and delivery ownership across high-volume global operations — execution, operational integrity, and operating-model transition.</p></div></button>
         <button class="cap reveal" type="button"><div class="cap-top"><span class="cap-ico"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 12l2 2 4-4"/></svg></span><h4>Project &amp; Program Management</h4><span class="cap-chev"></span></div><div class="cap-body"><p>Project strategy, planning, prioritization, and stakeholder-aligned delivery — with a 100% on-time completion record.</p></div></button>
@@ -815,6 +939,7 @@
             <span class="cert">Tableau Bootcamp — Foundational &amp; Introduction · Operational Academy / Percipio</span>
             <span class="cert">Power BI Bootcamp — Introduction &amp; Intermediate–Advanced · Percipio</span>
             <span class="cert">Data Analysis — Foundational Learning · Operational Academy / Percipio</span>
+            <span class="cert">Data Analysis &amp; Interpersonal Communication — Level 2</span>
             <span class="cert">Google Analytics 4 + Google Tag Manager · Udemy</span>
           </div>
         </div>
@@ -887,7 +1012,37 @@
   const swipeIO = new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); swipeIO.unobserve(e.target);} }); },{threshold:.25});
   document.querySelectorAll('.cv').forEach((el,i)=>{ el.style.transitionDelay=(i*0.14)+'s'; swipeIO.observe(el); });
 
-  document.querySelectorAll('.cap').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('open')));
+  const menuToggle=document.querySelector('.menu-toggle'),mobileNav=document.getElementById('mobile-nav');
+  if(menuToggle&&mobileNav){
+    menuToggle.addEventListener('click',()=>{
+      const open=mobileNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded',String(open));
+      menuToggle.textContent=open?'Close':'Menu';
+    });
+    mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+      mobileNav.classList.remove('open'); menuToggle.setAttribute('aria-expanded','false'); menuToggle.textContent='Menu';
+    }));
+  }
+
+  const navSections=['about','selected-work','experience','skills','education','contact'];
+  const navLinks=[...document.querySelectorAll('.navlinks a[data-section]')];
+  const navIO=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        navLinks.forEach(link=>link.classList.toggle('active',link.dataset.section===entry.target.id));
+      }
+    });
+  },{rootMargin:'-35% 0px -55% 0px',threshold:0});
+  navSections.forEach(id=>{const section=document.getElementById(id); if(section)navIO.observe(section);});
+
+  document.querySelectorAll('.cap').forEach((c,i)=>{
+    const body=c.querySelector('.cap-body'),id='cap-detail-'+(i+1);
+    if(body){body.id=id; c.setAttribute('aria-controls',id); c.setAttribute('aria-expanded','false');}
+    c.addEventListener('click',()=>{
+      const open=c.classList.toggle('open');
+      c.setAttribute('aria-expanded',String(open));
+    });
+  });
 
   function animateCount(el,target){ const dur=1300,t0=performance.now();
     function step(t){ const p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3); el.textContent=Math.round(e*target); if(p<1)requestAnimationFrame(step);} requestAnimationFrame(step);}
