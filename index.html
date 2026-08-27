@@ -129,7 +129,7 @@
   .automation-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--space-card); align-items:stretch;}
   .automation-grid--showcase .shot--wide,.automation-grid--showcase .shot:last-child{grid-column:1 / -1;}
   .automation-grid .shot{display:flex; flex-direction:column; height:100%;}
-  .automation-grid .shot a{display:flex; align-items:center; justify-content:center; background:var(--bg2); flex:1;}
+  .automation-grid .shot > a{display:flex; align-items:center; justify-content:center; background:var(--bg2); flex:1; min-height:220px;}
   .automation-grid .shot figcaption{min-height:68px;}
   .automation-grid--showcase .shot:last-child figcaption{min-height:auto;}
   .automation-grid .shot img{width:100%; height:auto; max-height:none; object-fit:contain; background:var(--bg2);}
@@ -338,10 +338,10 @@
   .shot figcaption a:hover{text-decoration:underline;}
 
   /* Make UI screenshots readable instead of cropped */
-  .automation-grid .shot a{min-height:220px; padding:10px;}
+  .automation-grid .shot > a{min-height:220px; padding:10px;}
   .automation-grid .shot img{max-width:100%; object-fit:contain;}
-  .automation-grid .shot--wide a,
-  .automation-grid--showcase .shot:last-child a{min-height:0; padding:0;}
+  .automation-grid .shot--wide > a,
+  .automation-grid--showcase .shot:last-child > a{min-height:0; padding:0;}
   .automation-grid .shot--wide img,
   .automation-grid--showcase .shot:last-child img{width:100%; height:auto;}
 
@@ -400,7 +400,7 @@
     .poster-grid{grid-template-columns:1fr 1fr;}
     .automation-grid{grid-template-columns:1fr;}
     .automation-grid .shot--wide,.automation-grid--showcase .shot:last-child{grid-column:auto;}
-    .automation-grid .shot a{min-height:0; padding:8px;}
+    .automation-grid .shot > a{min-height:0; padding:8px;}
     .automation-grid .shot figcaption{min-height:auto;}
   }
 
@@ -1219,7 +1219,7 @@
         <p>Power BI dashboards I built for delivery tracking and leadership views. Business and personal data has been redacted.</p></div>
       <div class="creation-grid">
         <figure class="shot reveal">
-          <a href="creation-supplement.jpg" target="_blank" rel="noopener"><img src="creation-supplement.jpg" alt="Supplement Dashboard current-projects view, built in Power BI" loading="lazy"></a>
+          <a href="creation-supplement_1.jpg" target="_blank" rel="noopener"><img src="creation-supplement_1.jpg" alt="Supplement Dashboard current-projects view, built in Power BI" loading="lazy"></a>
           <figcaption>Supplement Dashboard — current projects: status projection, delivery formats, planned/embargo timeline, and KPI gauges.</figcaption>
         </figure>
         <figure class="shot reveal">
