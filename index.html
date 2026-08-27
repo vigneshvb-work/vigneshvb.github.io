@@ -119,7 +119,8 @@
   .recent-card .rc-num{display:none;}
   .recent-card b{display:block; font:700 .92rem 'Manrope',sans-serif; margin-bottom:6px;}
   .recent-card p{color:var(--ink-soft); font-size:.82rem; line-height:1.55;}
-  .recent-card .rc-tools{display:block; margin-top:12px; color:var(--cyan); font:500 .66rem 'IBM Plex Mono',monospace;}
+  .recent-card .rc-tools{display:block; margin-top:12px;}
+  .recent-card .rc-tools.taglist{display:flex;}
   .opportunity-strip{display:flex; flex-wrap:wrap; gap:8px; margin-top:15px;}
   .opportunity-strip span{border:1px solid rgba(185,237,120,.22); color:#d2f3a9; background:rgba(185,237,120,.06); border-radius:999px; padding:6px 10px; font-size:.73rem;}
   @media(max-width:760px){.recent-grid{grid-template-columns:1fr;}}
@@ -161,6 +162,9 @@
   .factcard .row:last-child{border-bottom:none;}
   .factcard .row span:first-child{color:var(--ink-dim);}
   .factcard .row span:last-child{color:var(--ink); text-align:right;}
+  .taglist{display:flex; flex-wrap:wrap; gap:6px; justify-content:flex-end;}
+  .tagpill{display:inline-flex; align-items:center; border:1px solid var(--line); background:rgba(255,255,255,.035); color:var(--ink-soft); font:500 .72rem 'IBM Plex Mono',monospace; letter-spacing:.02em; padding:4px 10px; border-radius:999px; white-space:nowrap; line-height:1.4;}
+  .rc-tools.taglist{justify-content:flex-start;}
   .about--solo{display:block;}
   .exp-head{display:grid; grid-template-columns:1.3fr .92fr; gap:44px; align-items:stretch; margin-bottom:48px;}
   @media(max-width:880px){.exp-head{grid-template-columns:1fr; gap:24px; margin-bottom:34px;}}
@@ -448,6 +452,7 @@
     .factcard .row{display:grid; grid-template-columns:1fr; gap:4px; padding:12px 0;}
     .factcard .row span:first-child{font-size:.74rem; text-transform:uppercase; letter-spacing:.06em;}
     .factcard .row span:last-child{text-align:left;}
+    .factcard .row .taglist{justify-content:flex-start;}
     .pillar-strip{grid-template-columns:1fr; margin-top:0;}
     .cap{padding:17px;}
     .cap-ico{width:38px; height:38px;}
@@ -537,6 +542,11 @@
   .hero-grid{grid-template-columns:minmax(0,1.38fr) minmax(320px,.72fr);gap:74px;}
   .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:24px;padding:7px 12px;border-radius:999px;border:1px solid rgba(241,178,74,.24);background:rgba(241,178,74,.055);}
   .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px rgba(241,178,74,.75);}
+  .eyebrow-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
+  .eyebrow-chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;border:1px solid rgba(241,178,74,.24);background:rgba(241,178,74,.055);font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);}
+  .eyebrow-chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px rgba(241,178,74,.75);}
+  .nowrap-lg{white-space:normal;}
+  @media(min-width:641px){.nowrap-lg{white-space:nowrap !important;}}
   h1{font-size:clamp(3rem,5.6vw,5.25rem);max-width:11.2ch;line-height:.96;letter-spacing:-.065em;margin-bottom:26px;text-wrap:balance;}
   h1 .g{background:linear-gradient(108deg,var(--gold-soft) 4%,var(--gold) 44%,#8ee8f2 90%);-webkit-background-clip:text;background-clip:text;}
   .lede{font-size:clamp(1.04rem,1.55vw,1.2rem);line-height:1.72;max-width:59ch;color:#b9c4d8;}
@@ -670,6 +680,7 @@
     h1{max-width:13ch;margin-left:auto;margin-right:auto;}
     .lede{margin-left:auto;margin-right:auto;}
     .eyebrow{margin-left:auto;margin-right:auto;}
+    .eyebrow-row{justify-content:center;}
     .hero-workflow{max-width:680px;margin-left:auto;margin-right:auto;text-align:left;}
     .about--split{grid-template-columns:1fr;gap:40px;}
     .creed--v{display:grid;grid-template-columns:repeat(3,1fr);}
@@ -711,6 +722,25 @@
     .contact-row{flex-direction:column;}
   }
 
+  /* Selected-work rolling carousel */
+  .carousel{margin-top:8px;}
+  .carousel-tabs{display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-bottom:28px;}
+  .carousel-tab{font:600 .74rem 'IBM Plex Mono',monospace; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-soft); background:var(--bg2); border:1px solid var(--line); border-radius:999px; padding:9px 16px; cursor:pointer; transition:border-color .2s ease, color .2s ease, background .2s ease;}
+  .carousel-tab:hover{border-color:rgba(101,217,234,.4); color:var(--ink);}
+  .carousel-tab.is-active{color:#0a0f1f; background:linear-gradient(120deg,var(--gold),var(--cyan)); border-color:transparent;}
+  .carousel-viewport{overflow:hidden;}
+  .carousel-track{position:relative; transition:height .45s ease;}
+  .carousel-slide{position:absolute; top:0; left:0; width:100%; opacity:0; visibility:hidden; pointer-events:none; transition:opacity .45s ease;}
+  .carousel-slide.is-active{position:relative; opacity:1; visibility:visible; pointer-events:auto;}
+  .carousel-slide .preview-card{max-width:460px; margin:0 auto;}
+  .carousel-dots{display:flex; justify-content:center; gap:8px; margin-top:26px;}
+  .carousel-dot{width:8px; height:8px; padding:0; border-radius:50%; border:none; background:var(--line-2); cursor:pointer; transition:background .2s ease, transform .2s ease;}
+  .carousel-dot.is-active{background:linear-gradient(120deg,var(--gold),var(--cyan)); transform:scale(1.25);}
+  @media(max-width:640px){
+    .carousel-tabs{gap:6px;}
+    .carousel-tab{padding:8px 12px; font-size:.68rem;}
+  }
+
 </style>
 </head>
 <body>
@@ -742,7 +772,11 @@
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <div class="eyebrow label reveal">Groupon · Amazon · Elsevier</div>
+          <div class="eyebrow-row reveal">
+            <span class="eyebrow-chip">Groupon</span>
+            <span class="eyebrow-chip">Amazon</span>
+            <span class="eyebrow-chip">Elsevier</span>
+          </div>
           <h1 class="reveal">I design the systems that make complex operations <span class="g">run better.</span></h1>
           <p class="lede reveal">I'm Vignesh (people call me VB), a multifaceted-curious professional who can combine operational execution, analytics, automation, and responsible AI to make global workflows more visible, reliable, and scalable.</p>
           <div class="hero-workflow reveal" aria-label="Working approach">
@@ -779,53 +813,93 @@
 
   <section id="selected-work" class="work-preview alt">
     <div class="wrap">
-      <div class="sec-head reveal">
+      <div class="sec-head reveal" style="max-width:none">
         <div class="biglabel">SELECTED WORK</div>
-        <h2>Operational friction → Measurable control</h2>
+        <h2 class="nowrap-lg">Operational friction → Measurable control</h2>
         <p>Examples of how I turn manual work, scattered information, and process risk into systems people can use and trust.</p>
       </div>
-      <div class="preview-grid">
-        <article class="preview-card reveal">
-          <img src="creation-delivery.jpg" alt="On-time delivery performance dashboard built in Power BI" loading="lazy">
-          <div class="pc-body"><span class="pc-tag">Data &amp; delivery</span><h3>Delivery visibility system</h3><p>Built Power BI reporting that turns project data into a clearer operational and leadership view.</p><a class="pc-link" href="#creation">View dashboard work →</a></div>
-        </article>
-        <article class="preview-card screenshot-card reveal">
-          <img src="creation-rshub1.jpg" alt="Researcher Support Hub SharePoint home page" loading="lazy">
-          <div class="pc-body"><span class="pc-tag">Knowledge platform</span><h3>Researcher Support Hub</h3><p>Created a single source of truth for tools, guidance, documents, updates, and team enablement.</p><a class="pc-link" href="#creation">Explore the hub →</a></div>
-        </article>
-        <article class="preview-card reveal">
-          <img src="creation-poster2.jpg" alt="Bite-size process visibility poster" loading="lazy">
-          <div class="pc-body"><span class="pc-tag">Enablement &amp; change</span><h3>Bite-size knowledge design</h3><p>Translated complex process updates into visual, easy-to-use communication for global teams.</p><a class="pc-link" href="#creation">See the visual work →</a></div>
-        </article>
-      </div>
-      <div class="automation-block reveal">
-        <h2>Automation systems</h2>
-        <p>Selected workflow tools designed to reduce manual effort, structure project information, and make stakeholder updates easier to manage.</p>
-        <div class="automation-grid automation-grid--showcase">
-          <figure class="shot shot--wide reveal">
-            <a href="01-image.png" target="_blank" rel="noopener"><img src="01-image.png" alt="Abstract Scheduler interface for publication deadline scheduling" loading="lazy"></a>
-            <figcaption><strong>Abstract Scheduler</strong> — a publication deadline scheduling interface for structured delivery inputs, computed timelines, and operational planning. <a href="01-image.png" target="_blank" rel="noopener">View sample ↗</a></figcaption>
-          </figure>
-          <figure class="shot reveal">
-            <a href="02-image.png" target="_blank" rel="noopener"><img src="02-image.png" alt="Article Supplement Status Manager project and stakeholder details interface" loading="lazy"></a>
-            <figcaption><strong>Article Status Manager</strong> — project details, status-file import, and stakeholder update workflow. <a href="02-image.png" target="_blank" rel="noopener">View sample ↗</a></figcaption>
-          </figure>
-          <figure class="shot reveal">
-            <a href="03-image.png" target="_blank" rel="noopener"><img src="03-image.png" alt="Article Supplement Status Manager email drafting and reminder interface" loading="lazy"></a>
-            <figcaption>Automated reminders, email drafting, and update history for journal-manager, publisher, society/client, and sales communications.</figcaption>
-          </figure>
-          <figure class="shot reveal">
-            <a href="04-image.png" target="_blank" rel="noopener"><img src="04-image.png" alt="Article Supplement Status Manager configured sections overview" loading="lazy"></a>
-            <figcaption>Configured sections and project-status overview for tracking supplement delivery across workstreams.</figcaption>
-          </figure>
+      <div class="carousel reveal" id="workCarousel">
+        <div class="carousel-tabs" role="tablist" aria-label="Selected work categories">
+          <button class="carousel-tab is-active" type="button" role="tab" aria-selected="true" data-slide="0">Data &amp; delivery</button>
+          <button class="carousel-tab" type="button" role="tab" aria-selected="false" data-slide="1">Knowledge platform</button>
+          <button class="carousel-tab" type="button" role="tab" aria-selected="false" data-slide="2">Enablement &amp; change</button>
+          <button class="carousel-tab" type="button" role="tab" aria-selected="false" data-slide="3">Abstract Scheduler</button>
+          <button class="carousel-tab" type="button" role="tab" aria-selected="false" data-slide="4">Article Status Manager</button>
+        </div>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+
+            <div class="carousel-slide is-active" data-slide="0">
+              <article class="preview-card">
+                <img src="creation-delivery.jpg" alt="On-time delivery performance dashboard built in Power BI" loading="lazy">
+                <div class="pc-body"><span class="pc-tag">Data &amp; delivery</span><h3>Delivery visibility system</h3><p>Built Power BI reporting that turns project data into a clearer operational and leadership view.</p><a class="pc-link" href="#creation">View dashboard work →</a></div>
+              </article>
+            </div>
+
+            <div class="carousel-slide" data-slide="1">
+              <article class="preview-card screenshot-card">
+                <img src="creation-rshub1.jpg" alt="Researcher Support Hub SharePoint home page" loading="lazy">
+                <div class="pc-body"><span class="pc-tag">Knowledge platform</span><h3>Researcher Support Hub</h3><p>Created a single source of truth for tools, guidance, documents, updates, and team enablement.</p><a class="pc-link" href="#creation">Explore the hub →</a></div>
+              </article>
+            </div>
+
+            <div class="carousel-slide" data-slide="2">
+              <article class="preview-card">
+                <img src="creation-poster2.jpg" alt="Bite-size process visibility poster" loading="lazy">
+                <div class="pc-body"><span class="pc-tag">Enablement &amp; change</span><h3>Bite-size knowledge design</h3><p>Translated complex process updates into visual, easy-to-use communication for global teams.</p><a class="pc-link" href="#creation">See the visual work →</a></div>
+              </article>
+            </div>
+
+            <div class="carousel-slide" data-slide="3">
+              <div class="automation-block" style="margin-top:0;border-top:none;padding-top:0">
+                <h2>Abstract Scheduler</h2>
+                <p>A branded publication deadline scheduling tool that converts delivery inputs into a computed timeline and supports operational planning.</p>
+                <div class="automation-grid automation-grid--showcase">
+                  <figure class="shot shot--wide">
+                    <a href="01-image.png" target="_blank" rel="noopener"><img src="01-image.png" alt="Abstract Scheduler interface for publication deadline scheduling" loading="lazy"></a>
+                    <figcaption><strong>Abstract Scheduler</strong> — a publication deadline scheduling interface for structured delivery inputs, computed timelines, and operational planning.</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-slide" data-slide="4">
+              <div class="automation-block" style="margin-top:0;border-top:none;padding-top:0">
+                <h2>Article Status Manager</h2>
+                <p>An end-to-end supplement status and stakeholder communication tool covering project details, status-file import, reminders, email drafting, and configured-section tracking.</p>
+                <div class="automation-grid automation-grid--showcase">
+                  <figure class="shot reveal">
+                    <a href="02-image.png" target="_blank" rel="noopener"><img src="02-image.png" alt="Article Supplement Status Manager project and stakeholder details interface" loading="lazy"></a>
+                    <figcaption><strong>Article Status Manager</strong> — project details, status-file import, and stakeholder update workflow.</figcaption>
+                  </figure>
+                  <figure class="shot reveal">
+                    <a href="03-image.png" target="_blank" rel="noopener"><img src="03-image.png" alt="Article Supplement Status Manager email drafting and reminder interface" loading="lazy"></a>
+                    <figcaption>Automated reminders, email drafting, and update history for journal-manager, publisher, society/client, and sales communications.</figcaption>
+                  </figure>
+                  <figure class="shot reveal">
+                    <a href="04-image.png" target="_blank" rel="noopener"><img src="04-image.png" alt="Article Supplement Status Manager configured sections overview" loading="lazy"></a>
+                    <figcaption>Configured sections and project-status overview for tracking supplement delivery across workstreams.</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="carousel-dots" role="tablist" aria-hidden="true">
+          <button class="carousel-dot is-active" type="button" data-slide="0" aria-label="Slide 1"></button>
+          <button class="carousel-dot" type="button" data-slide="1" aria-label="Slide 2"></button>
+          <button class="carousel-dot" type="button" data-slide="2" aria-label="Slide 3"></button>
+          <button class="carousel-dot" type="button" data-slide="3" aria-label="Slide 4"></button>
+          <button class="carousel-dot" type="button" data-slide="4" aria-label="Slide 5"></button>
         </div>
       </div>
       <div class="recent-work reveal">
         <h3>Delivery systems &amp; ownership</h3>
         <div class="recent-grid">
-          <article class="recent-card"><b>Automation ideation</b><p>Built the HTML workflow end to end, including Power Automate reminders, JSON-generation protocol, SOP, OneDrive materials, and MS Forms feedback loop.</p><span class="rc-tools">HTML · Power Automate · JSON · SOP</span></article>
-          <article class="recent-card"><b>Scheduler &amp; status tools</b><p>Integrated FTX delivery mode into the Abstract Scheduler with an Elsevier-aligned interface, while completing the Article Status Manager.</p><span class="rc-tools">Abstract Scheduler · Article Status Manager · UX</span></article>
-          <article class="recent-card"><b>Transition &amp; reporting handover</b><p>Completed structured Knowledge Transfer and ownership transfer across journal supplements, Future Skills, Spanish Supplements, and the Power BI Reporting Pillar.</p><span class="rc-tools">Knowledge Transfer · SharePoint · Power BI · Governance</span></article>
+          <article class="recent-card"><b>Automation ideation</b><p>Built the HTML workflow end to end, including Power Automate reminders, JSON-generation protocol, SOP, OneDrive materials, and MS Forms feedback loop.</p><span class="rc-tools taglist"><span class="tagpill">HTML</span><span class="tagpill">Power Automate</span><span class="tagpill">JSON</span><span class="tagpill">SOP</span></span></article>
+          <article class="recent-card"><b>Scheduler &amp; status tools</b><p>Integrated FTX delivery mode into the Abstract Scheduler with an Elsevier-aligned interface, while completing the Article Status Manager.</p><span class="rc-tools taglist"><span class="tagpill">Abstract Scheduler</span><span class="tagpill">Article Status Manager</span><span class="tagpill">UX</span></span></article>
+          <article class="recent-card"><b>Transition &amp; reporting handover</b><p>Completed structured Knowledge Transfer and ownership transfer across journal supplements, Future Skills, Spanish Supplements, and the Power BI Reporting Pillar.</p><span class="rc-tools taglist"><span class="tagpill">Knowledge Transfer</span><span class="tagpill">SharePoint</span><span class="tagpill">Power BI</span><span class="tagpill">Governance</span></span></article>
         </div>
         <div class="opportunity-strip" aria-label="Future opportunity areas"><span>RFCP &amp; SIF HTML system</span><span>Automatic supplement assigner</span><span>Spanish workflow bot</span></div>
       </div>
@@ -862,14 +936,14 @@
     <div class="wrap">
       <div class="exp-head">
         <div class="sec-head reveal"><div class="biglabel">EXPERIENCE</div><h2>A decade of growing ownership, continuous learning, innovation, and people trust.</h2>
-          <p>From frontline support, to fraud &amp; quality investigation, to owning projects and the systems beneath it.</p></div>
+          <p>From frontline support, to fraud analyst &amp; quality investigation, to owning projects and the systems beneath it.</p></div>
         <aside class="factcard factcard--exp reveal">
           <div class="row"><span>Current Role</span><span>Delivery Owner</span></div>
           <div class="row"><span>Organization</span><span>Elsevier · Global Pharma Operations</span></div>
           <div class="row"><span>Based in</span><span>Chennai, India</span></div>
-          <div class="row"><span>Focus</span><span>Project Management · Automation · Risk Governance · Fraud Detection · Innovation</span></div>
-          <div class="row"><span>Frameworks</span><span>Lean Six Sigma Green Belt · RASCI · Power BI &amp; Tableau Dashboard · Project strategy</span></div>
-          <div class="row"><span>AI</span><span>Generative AI SME · RELX AI Fluency · AI based projects</span></div>
+          <div class="row"><span>Focus</span><span class="taglist"><span class="tagpill">Project Management</span><span class="tagpill">Automation</span><span class="tagpill">Risk Governance</span><span class="tagpill">Fraud Detection</span><span class="tagpill">Innovation</span></span></div>
+          <div class="row"><span>Frameworks</span><span class="taglist"><span class="tagpill">Lean Six Sigma Green Belt</span><span class="tagpill">RASCI</span><span class="tagpill">Power BI &amp; Tableau Dashboard</span><span class="tagpill">Project strategy</span></span></div>
+          <div class="row"><span>AI</span><span class="taglist"><span class="tagpill">Generative AI SME</span><span class="tagpill">RELX AI Fluency</span><span class="tagpill">AI based projects</span></span></div>
         </aside>
       </div>
       <div class="tl reveal">
@@ -1091,7 +1165,7 @@
 
               <div class="deep-h">Projects &amp; initiatives</div>
               <div class="deep-card">
-                <span class="rt2">GEMBA · Process Improvement</span>
+                <span class="rt2">GEMBA &amp; Process Improvement</span>
                 <h5>Workflow &amp; SOP fixes</h5>
                 <ul>
                   <li>Raised two high-priority GEMBAs to streamline processes and improve Selling Partner experience.</li>
@@ -1191,7 +1265,7 @@
                 </ul>
               </div>
               <div class="deep-card">
-                <span class="rt2">GEMBA · Process Improvement</span>
+                <span class="rt2">GEMBA &amp; Process Improvement</span>
                 <h5>Macros &amp; transfer workflows</h5>
                 <ul>
                   <li>Refined macro templates by removing non-contextual apologetic language to improve customer experience.</li>
@@ -1215,8 +1289,11 @@
 
   <section id="creation" class="alt">
     <div class="wrap">
-      <div class="sec-head reveal"><div class="biglabel">MY CREATION</div><h2 class="creation-subtitle">Dashboards | Designed &amp; built</h2>
-        <p>Power BI dashboards I built for delivery tracking and leadership views. Business and personal data has been redacted.</p></div>
+      <div class="sec-head reveal"><div class="biglabel">MY CREATION</div><h2 class="creation-subtitle nowrap-lg">Innovation.. Innovation.. Innovation..</h2></div>
+      <div class="reveal" style="margin-bottom:20px">
+        <h2 class="creation-subtitle">Power BI Dashboards-Variation</h2>
+        <p class="creation-desc">Power BI dashboards created for delivery tracking and leadership views.</p>
+      </div>
       <div class="creation-grid">
         <figure class="shot reveal">
           <a href="creation-supplement_1.jpg" target="_blank" rel="noopener"><img src="creation-supplement_1.jpg" alt="Supplement Dashboard current-projects view, built in Power BI" loading="lazy"></a>
@@ -1224,7 +1301,7 @@
         </figure>
         <figure class="shot reveal">
           <a href="creation-completed.jpg" target="_blank" rel="noopener"><img src="creation-completed.jpg" alt="Supplement Dashboard completed and cancelled view, built in Power BI" loading="lazy"></a>
-          <figcaption>Supplement Dashboard — completed &amp; cancelled view: the same model re-cut for closed-project reporting.</figcaption>
+          <figcaption>Supplement Dashboard — completed &amp; cancelled view: the same model re-cut for completed &amp; closed-project reporting only.</figcaption>
         </figure>
         <figure class="shot shot--wide reveal">
           <a href="creation-delivery.jpg" target="_blank" rel="noopener"><img src="creation-delivery.jpg" alt="On-time delivery performance dashboard built in Power BI" loading="lazy"></a>
@@ -1233,8 +1310,8 @@
       </div>
 
       <div class="poster-block reveal">
-        <h2 class="creation-subtitle">Bite-size Posters | Knowledge transfer &amp; process visibility</h2>
-        <p class="creation-desc">Posters I designed to circulate process updates and bite-size learning across global teams. Process details are redacted — the design and headings are shown.</p>
+        <h2 class="creation-subtitle">Bite-size Posters-Knowledge transfer &amp; process visibility</h2>
+        <p class="creation-desc">Posters I designed to circulate process updates and bite-size learning across global teams.</p>
         <div class="poster-grid">
           <figure class="shot reveal">
             <a href="creation-poster2.jpg" target="_blank" rel="noopener"><img src="creation-poster2.jpg" alt="Bite-size update poster — numbered-card layout (content redacted)" loading="lazy"></a>
@@ -1252,8 +1329,8 @@
       </div>
 
       <div class="rshub-block reveal">
-        <h2 class="creation-subtitle">RS Hub | SharePoint knowledge platform</h2>
-        <p class="creation-desc">Founder &amp; owner of "The Researcher Support Hub" — a single-point SharePoint site linking tools, knowledge, and resources for global RS teams. Restricted and personal details are redacted; the design is intact.</p>
+        <h2 class="creation-subtitle">RS Hub-SharePoint knowledge platform</h2>
+        <p class="creation-desc">Founder &amp; owner of "The Researcher Support Hub" — a single-point SharePoint site linking tools, knowledge, and resources for global RS teams.</p>
         <div class="rshub-grid">
           <figure class="shot reveal">
             <a href="creation-rshub1.jpg" target="_blank" rel="noopener"><img src="creation-rshub1.jpg" alt="RS Hub SharePoint home page I designed" loading="lazy"></a>
@@ -1280,7 +1357,7 @@
         <div class="automation-grid">
           <figure class="shot shot--wide reveal">
             <a href="01-image.png" target="_blank" rel="noopener"><img src="01-image.png" alt="Abstract Scheduler publication deadline scheduling tool" loading="lazy"></a>
-            <figcaption>Publication deadline scheduler — schedule inputs, computed timeline, and delivery disclaimer. <a href="01-image.png" target="_blank" rel="noopener">Open sample ↗</a></figcaption>
+            <figcaption>Publication deadline scheduler — schedule inputs, computed timeline, and delivery disclaimer.</figcaption>
           </figure>
         </div>
       </div>
@@ -1321,7 +1398,7 @@
         <button class="cap reveal" type="button"><div class="cap-top"><span class="cap-ico"><svg viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7 6h10M6.5 7.7l4 8.6M17.5 7.7l-4 8.6"/></svg></span><h4>Process Excellence &amp; Lean Six Sigma</h4><span class="cap-chev"></span></div><div class="cap-body"><p>SOP authoring, RASCI accountability models, GEMBA, and Lean Six Sigma (Green Belt) for repeatable, audit-ready outcomes.</p></div></button>
         <button class="cap reveal" type="button"><div class="cap-top"><span class="cap-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><h4>Automation &amp; Workflow Optimization</h4><span class="cap-chev"></span></div><div class="cap-body"><p>Appian, Power Automate, custom schedulers, and workflow optimization that remove manual effort and improve transparency.</p></div></button>
         <button class="cap reveal" type="button"><div class="cap-top"><span class="cap-ico"><svg viewBox="0 0 24 24"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z"/></svg></span><h4>Generative AI &amp; Responsible AI</h4><span class="cap-chev"></span></div><div class="cap-body"><p>GenAI SME — adoption, evaluation, fair-use principles, bias awareness, explainability, and workflow validation.</p></div></button>
-        <button class="cap reveal" type="button"><div class="cap-top"><span class="cap-ico"><svg viewBox="0 0 24 24"><line x1="6" y1="20" x2="6" y2="12"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="18" y1="20" x2="18" y2="9"/><line x1="3" y1="20" x2="21" y2="20"/></svg></span><h4>Data Analytics &amp; BI</h4><span class="cap-chev"></span></div><div class="cap-body"><p>Power BI &amp; Tableau dashboards, GA4 tagging, KPI tracking, and CSAT/DSAT/SLA performance analysis.</p></div></button>
+        <button class="cap reveal" type="button"><div class="cap-top"><span class="cap-ico"><svg viewBox="0 0 24 24"><line x1="6" y1="20" x2="6" y2="12"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="18" y1="20" x2="18" y2="9"/><line x1="3" y1="20" x2="21" y2="20"/></svg></span><h4>Data Analytics &amp; Business Intelligence</h4><span class="cap-chev"></span></div><div class="cap-body"><p>Power BI &amp; Tableau dashboards, GA4 tagging, KPI tracking, and CSAT/DSAT/SLA performance analysis.</p></div></button>
         <button class="cap reveal" type="button"><div class="cap-top"><span class="cap-ico"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5l8-3z"/></svg></span><h4>Risk, Compliance &amp; Fraud Detection</h4><span class="cap-chev"></span></div><div class="cap-body"><p>Risk assessment, validation frameworks, compliance monitoring, document/invoice authentication, and fraud prevention.</p></div></button>
         <button class="cap reveal" type="button"><div class="cap-top"><span class="cap-ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.1 1.6 2.6-.2 1 2.4 2.2 1.4-.6 2.5.6 2.5-2.2 1.4-1 2.4-2.6-.2L12 21l-2.1-1.6-2.6.2-1-2.4-2.2-1.4.6-2.5-.6-2.5 2.2-1.4 1-2.4 2.6.2L12 3z"/><path d="M9 12l2 2 4-4"/></svg></span><h4>Quality Assurance &amp; Audits</h4><span class="cap-chev"></span></div><div class="cap-body"><p>Quality audits, root-cause analysis, classification-accuracy improvement, and false-positive reduction.</p></div></button>
         <button class="cap reveal" type="button"><div class="cap-top"><span class="cap-ico"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 21l1.8-5.5A8 8 0 1 1 21 12z"/><path d="M9 12h.01M15 12h.01M9.5 14.5a3.5 3.5 0 0 0 5 0"/></svg></span><h4>Customer Experience (CX)</h4><span class="cap-chev"></span></div><div class="cap-body"><p>Customer-centric support across CSAT, DSAT, Voice of Customer, and first-contact resolution for global author, reviewer, and seller segments.</p></div></button>
@@ -1386,7 +1463,7 @@
 
   <section id="education" class="alt">
     <div class="wrap">
-      <div class="sec-head reveal"><div class="biglabel">EDUCATION &amp; CERTIFICATIONS</div><h2>A multi-disciplinary foundation</h2>
+      <div class="sec-head reveal" style="max-width:none"><div class="biglabel nowrap-lg">EDUCATION &amp; CERTIFICATIONS</div><h2>A multi-disciplinary foundation</h2>
         <p>Engineering, psychology, healthcare, human excellence and Life Sciences — the range behind a process-and-people approach.</p></div>
 
       <div class="edu" style="margin-bottom:38px">
@@ -1400,13 +1477,13 @@
 
       <div class="reveal">
         <div class="cert-grp">
-          <div class="gh">Process &amp; Analytics</div>
+          <div class="gh">Operational Process &amp; Data Analytics</div>
           <div class="cert-list">
             <span class="cert">Lean Six Sigma — White, Yellow &amp; Green Belt · Six Sigma Academy Amsterdam</span>
             <span class="cert">Tableau Bootcamp — Foundational &amp; Introduction · Operational Academy / Percipio</span>
             <span class="cert">Power BI Bootcamp — Introduction &amp; Intermediate–Advanced · Percipio</span>
             <span class="cert">Data Analysis — Foundational Learning · Operational Academy / Percipio</span>
-            <span class="cert">Data Analysis &amp; Interpersonal Communication — Level 2</span>
+            <span class="cert">Data Analysis Level 1 &amp; 2 Cohort · Elsevier future skills program</span>
             <span class="cert">Google Analytics 4 + Google Tag Manager · Udemy</span>
           </div>
         </div>
@@ -1422,10 +1499,11 @@
             <span class="cert">GIMP 2.10 Masterclass — Photo Editing · Udemy</span>
             <span class="cert">Digital &amp; Mobile Communication, Broadband Technologies · AICTE-BSNL</span>
             <span class="cert">White Belt Security for Non-Tech Roles · Security Journey</span>
+            <span class="cert">Generative AI-Bronze and Silver Pathway · Elsevier future skills program</span>
           </div>
         </div>
         <div class="cert-grp">
-          <div class="gh">Customer Experience &amp; Operations</div>
+          <div class="gh">Customer Experience &amp; Success</div>
           <div class="cert-list">
             <span class="cert">CX Essentials &amp; Enthusiast · Forrester / Elsevier</span>
             <span class="cert">Voice of Customer Technique Specialist · AIGPE</span>
@@ -1436,7 +1514,8 @@
           <div class="gh">Professional Development</div>
           <div class="cert-list">
             <span class="cert">Certified Specialty Mentor &amp; Trainer · Amazon</span>
-            <span class="cert">Problem Solving &amp; Interpersonal Communication · Elsevier</span>
+            <span class="cert">Problem Solving Level 1 &amp; 2 Cohort · Elsevier future skills program</span>
+            <span class="cert">Interpersonal Communication Level 1 &amp; 2 Cohort · Elsevier future skills program</span>
             <span class="cert">Introduction to Publication Ethics · COPE</span>
             <span class="cert">Introduction &amp; Transition into UX Writing · Udemy</span>
           </div>
@@ -1450,7 +1529,7 @@
       <div class="contact-card reveal">
         <div class="biglabel" style="margin-bottom:14px">CONTACT</div>
         <h2>Let's trade ideas.</h2>
-        <p>If you're working on operations transformation, automation, risk intelligence, AI adoption at scale, Clinical Diagnosis, Psychology and Psychiatric, I'd be glad to connect.</p>
+        <p>If you're working on operations transformation, automation, risk intelligence, Generative AI, Clinical Diagnosis and therapeutic methodology, Psychology and Psychiatry, I'd be glad to connect.</p>
         <div class="contact-row">
           <a class="btn btn-primary" href="mailto:vbvignesh22011@gmail.com">vbvignesh22011@gmail.com</a>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/vignesh-v-b-947b34101/" target="_blank" rel="noopener">LinkedIn</a>
@@ -1478,6 +1557,52 @@
 
   const swipeIO = new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); swipeIO.unobserve(e.target);} }); },{threshold:.25});
   document.querySelectorAll('.cv').forEach((el,i)=>{ el.style.transitionDelay=(i*0.14)+'s'; swipeIO.observe(el); });
+
+  // Selected-work rolling carousel
+  (function(){
+    const root = document.getElementById('workCarousel');
+    if(!root) return;
+    const tabs = Array.from(root.querySelectorAll('.carousel-tab'));
+    const dots = Array.from(root.querySelectorAll('.carousel-dot'));
+    const slides = Array.from(root.querySelectorAll('.carousel-slide'));
+    const track = root.querySelector('.carousel-track');
+    let idx = 0;
+    let timer = null;
+    const AUTOPLAY_MS = 5200;
+
+    function setTrackHeight(){
+      const active = slides[idx];
+      if(active) track.style.height = active.scrollHeight + 'px';
+    }
+
+    function goTo(i){
+      idx = (i + slides.length) % slides.length;
+      slides.forEach((s,n)=> s.classList.toggle('is-active', n===idx));
+      tabs.forEach((t,n)=> { t.classList.toggle('is-active', n===idx); t.setAttribute('aria-selected', n===idx ? 'true':'false'); });
+      dots.forEach((d,n)=> d.classList.toggle('is-active', n===idx));
+      setTrackHeight();
+    }
+
+    function next(){ goTo(idx+1); }
+
+    function startAutoplay(){
+      if(reduce) return;
+      stopAutoplay();
+      timer = setInterval(next, AUTOPLAY_MS);
+    }
+    function stopAutoplay(){ if(timer){ clearInterval(timer); timer=null; } }
+
+    tabs.forEach((t,n)=> t.addEventListener('click', ()=>{ goTo(n); startAutoplay(); }));
+    dots.forEach((d,n)=> d.addEventListener('click', ()=>{ goTo(n); startAutoplay(); }));
+    root.addEventListener('mouseenter', stopAutoplay);
+    root.addEventListener('mouseleave', startAutoplay);
+
+    window.addEventListener('resize', setTrackHeight);
+    window.addEventListener('load', setTrackHeight);
+
+    goTo(0);
+    startAutoplay();
+  })();
 
   const menuToggle=document.querySelector('.menu-toggle'),mobileNav=document.getElementById('mobile-nav');
   if(menuToggle&&mobileNav){
